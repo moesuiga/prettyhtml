@@ -1,6 +1,6 @@
 {
   "name": "@wayowe/prettyhtml-sort-attributes",
-  "version": "0.10.0",
+  "version": "0.10.2",
   "description": "Sort attributes alphabetically",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test-coverage": "nyc --reporter lcov ava"
   },
   "devDependencies": {
-    "@wayowe/prettyhtml-hastscript": "^0.10.0",
+    "@wayowe/prettyhtml-hastscript": "^0.10.2",
     "ava": "^2.1.0",
     "nyc": "^14.1.1",
     "rehype": "^8.0.0"

@@ -1,6 +1,6 @@
 {
   "name": "@wayowe/prettyhtml-formatter",
-  "version": "0.10.0",
+  "version": "0.10.2",
   "description": "Html formatter",
   "main": "index.js",
   "repository": {
@@ -36,11 +36,11 @@
   },
   "homepage": "https://github.com/moesuiga/prettyhtml#readme",
   "dependencies": {
-    "@wayowe/expression-parser": "^0.10.0",
-    "@wayowe/prettyhtml-hast-to-html": "^0.10.0",
-    "@wayowe/rehype-minify-whitespace": "^0.10.0",
-    "@wayowe/rehype-webparser": "^0.10.0",
-    "@wayowe/webparser": "^0.10.0",
+    "@wayowe/expression-parser": "^0.10.2",
+    "@wayowe/prettyhtml-hast-to-html": "^0.10.2",
+    "@wayowe/rehype-minify-whitespace": "^0.10.2",
+    "@wayowe/rehype-webparser": "^0.10.2",
+    "@wayowe/webparser": "^0.10.2",
     "hast-util-is-element": "^1.0.3",
     "hast-util-to-string": "^1.0.2",
     "html-void-elements": "^1.0.4",

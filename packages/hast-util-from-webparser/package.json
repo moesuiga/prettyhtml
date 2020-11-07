@@ -1,6 +1,6 @@
 {
   "name": "@wayowe/hast-util-from-webparser",
-  "version": "0.10.0",
+  "version": "0.10.2",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -28,8 +28,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@wayowe/prettyhtml-hastscript": "^0.10.0",
-    "@wayowe/webparser": "^0.10.0",
+    "@wayowe/prettyhtml-hastscript": "^0.10.2",
+    "@wayowe/webparser": "^0.10.2",
     "property-information": "^5.1.0"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@wayowe/prettyhtml-quick",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "",
   "main": "./bin/cli.js",
   "scripts": {
@@ -29,7 +29,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@wayowe/prettyhtml": "^0.10.0",
+    "@wayowe/prettyhtml": "^0.10.2",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
     "execa": "^1.0.0",
