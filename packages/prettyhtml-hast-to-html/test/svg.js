@@ -2,8 +2,8 @@
 
 var test = require('ava')
 var u = require('unist-builder')
-var s = require('@starptech/prettyhtml-hastscript/svg')
-var h = require('@starptech/prettyhtml-hastscript')
+var s = require('@wayowe/prettyhtml-hastscript/svg')
+var h = require('@wayowe/prettyhtml-hastscript')
 var to = require('..')
 
 test('svg', function(t) {

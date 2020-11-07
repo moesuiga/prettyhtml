@@ -22,6 +22,7 @@ export interface ParserOptions {
   ignoreFirstLf?: boolean
   selfClosingElements?: boolean
   selfClosingCustomElements?: boolean
+  voids?: string[]
 }
 
 export interface TreeBuilderOptions {
@@ -29,6 +30,7 @@ export interface TreeBuilderOptions {
   insertRequiredParents?: boolean
   selfClosingElements?: boolean
   selfClosingCustomElements?: boolean
+  voids?: string[]
 }
 
 export class ParseTreeResult {
@@ -44,7 +46,12 @@ export class Parser {
       selfClosingElements: false,
       selfClosingCustomElements: false
     },
-    public getTagDefinition: (tagName: string, ignoreFirstLf: boolean, canSelfClose: boolean) => TagDefinition
+    public getTagDefinition: (
+      tagName: string,
+      ignoreFirstLf: boolean,
+      canSelfClose: boolean,
+      voids?: string[]
+    ) => TagDefinition
   ) {}
 
   parse(
@@ -89,7 +96,8 @@ class _TreeBuilder {
     private getTagDefinition: (
       tagName: string,
       ignoreFirstLf: boolean,
-      canSelfClose: boolean
+      canSelfClose: boolean,
+      voids?: string[]
     ) => TagDefinition
   ) {
     this._advance()
@@ -165,8 +173,12 @@ class _TreeBuilder {
       if (
         parent != null &&
         parent.children.length == 0 &&
-        this.getTagDefinition(parent.name, this.options.ignoreFirstLf, this.options.selfClosingElements)
-          .ignoreFirstLf
+        this.getTagDefinition(
+          parent.name,
+          this.options.ignoreFirstLf,
+          this.options.selfClosingElements,
+          this.options.voids
+        ).ignoreFirstLf
       ) {
         text = text.substring(1)
       }
@@ -181,7 +193,12 @@ class _TreeBuilder {
     const el = this._getParentElement()
     if (
       el &&
-      this.getTagDefinition(el.name, this.options.ignoreFirstLf, this.options.selfClosingElements).isVoid
+      this.getTagDefinition(
+        el.name,
+        this.options.ignoreFirstLf,
+        this.options.selfClosingElements,
+        this.options.voids
+      ).isVoid
     ) {
       this._elementStack.pop()
     }
@@ -204,7 +221,8 @@ class _TreeBuilder {
       const tagDef = this.getTagDefinition(
         nameAndNsInfo.fullName,
         this.options.ignoreFirstLf,
-        this.options.selfClosingElements
+        this.options.selfClosingElements,
+        this.options.voids
       )
       if (
         !(
@@ -253,7 +271,8 @@ class _TreeBuilder {
       this.getTagDefinition(
         parentEl.name,
         this.options.ignoreFirstLf,
-        this.options.selfClosingElements
+        this.options.selfClosingElements,
+        this.options.voids
       ).isClosedByChild(el.name)
     ) {
       this._elementStack.pop()
@@ -263,7 +282,8 @@ class _TreeBuilder {
       const tagDef = this.getTagDefinition(
         el.name,
         this.options.ignoreFirstLf,
-        this.options.selfClosingElements
+        this.options.selfClosingElements,
+        this.options.voids
       )
       const { parent, container } = this._getParentElementSkippingContainers()
 
@@ -297,8 +317,12 @@ class _TreeBuilder {
     }
 
     if (
-      this.getTagDefinition(nameInfo.fullName, this.options.ignoreFirstLf, this.options.selfClosingElements)
-        .isVoid
+      this.getTagDefinition(
+        nameInfo.fullName,
+        this.options.ignoreFirstLf,
+        this.options.selfClosingElements,
+        this.options.voids
+      ).isVoid
     ) {
       this._errors.push(
         TreeError.create(
@@ -324,8 +348,12 @@ class _TreeBuilder {
       }
 
       if (
-        !this.getTagDefinition(el.name, this.options.ignoreFirstLf, this.options.selfClosingElements)
-          .closedByParent
+        !this.getTagDefinition(
+          el.name,
+          this.options.ignoreFirstLf,
+          this.options.selfClosingElements,
+          this.options.voids
+        ).closedByParent
       ) {
         return false
       }
@@ -419,8 +447,12 @@ class _TreeBuilder {
   ): { fullName: string; implicitNs: boolean } {
     let implicitNs = false
     if (prefix == null) {
-      prefix = this.getTagDefinition(localName, this.options.ignoreFirstLf, this.options.selfClosingElements)
-        .implicitNamespacePrefix!
+      prefix = this.getTagDefinition(
+        localName,
+        this.options.ignoreFirstLf,
+        this.options.selfClosingElements,
+        this.options.voids
+      ).implicitNamespacePrefix!
       if (prefix) {
         implicitNs = true
       }

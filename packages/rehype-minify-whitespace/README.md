@@ -1,4 +1,4 @@
-# @starptech/rehype-minify-whitespace
+# @wayowe/rehype-minify-whitespace
 
 Collapse whitespace.
 
@@ -9,7 +9,7 @@ of `' '`.
 ## Installation
 
 ```
-npm install --save @starptech/rehype-minify-whitespace
+npm install --save @wayowe/rehype-minify-whitespace
 ```
 
 ## Usage

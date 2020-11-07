@@ -1,5 +1,5 @@
 {
-  "name": "@starptech/prettyhtml-quick",
+  "name": "@wayowe/prettyhtml-quick",
   "version": "0.10.1",
   "description": "",
   "main": "./bin/cli.js",
@@ -20,9 +20,16 @@
     "html5"
   ],
   "author": "Dustin Deus <deusdustin@gmail.com> (http://www.starptech.de)",
+  "contributors": [
+    {
+      "name": "moesuiga",
+      "email": "wyw1121@live.com",
+      "url": "https://moesuiga.github.io/"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
-    "@starptech/prettyhtml": "^0.10.0",
+    "@wayowe/prettyhtml": "^0.10.0",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
     "execa": "^1.0.0",

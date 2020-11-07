@@ -2,7 +2,7 @@
 
 'use strict'
 
-const minify = require('@starptech/rehype-minify-whitespace')({
+const minify = require('@wayowe/rehype-minify-whitespace')({
   newlines: true
 })
 const sensitive = require('html-whitespace-sensitive-tag-names')
@@ -14,7 +14,7 @@ const voids = require('html-void-elements')
 const find = require('unist-util-find')
 const toString = require('hast-util-to-string')
 const prettier = require('prettier')
-const expressionParser = require('@starptech/expression-parser')
+const expressionParser = require('@wayowe/expression-parser')
 
 module.exports = format
 

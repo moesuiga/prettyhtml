@@ -2,7 +2,7 @@
 
 var test = require('ava')
 var u = require('unist-builder')
-var h = require('@starptech/prettyhtml-hastscript')
+var h = require('@wayowe/prettyhtml-hastscript')
 var to = require('..')
 
 test('`body` (opening)', function(t) {

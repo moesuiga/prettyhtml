@@ -1,11 +1,11 @@
-# @starptech/rehype-webparser
+# @wayowe/rehype-webparser
 
 Parses HTML via [**Webparser**](https://github.com/Prettyhtml/prettyhtml/tree/master/packages/webparser) to a [**HAST**](https://github.com/syntax-tree/hast) syntax tree.
 
 ## Installation
 
 ```
-npm install --save @starptech/rehype-webparser
+npm install --save @wayowe/rehype-webparser
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ And our script, `example.js`, looks as follows:
 const vfile = require('to-vfile')
 const report = require('vfile-reporter')
 const unified = require('unified')
-const parse = require('@starptech/rehype-webparser')
+const parse = require('@wayowe/rehype-webparser')
 const toHTML = require('hast-util-to-html')
 
 // A compiler is needed to inform unified how to transform it back to HTML

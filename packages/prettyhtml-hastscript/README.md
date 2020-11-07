@@ -1,11 +1,11 @@
-# @starptech/prettyhtml-hastscript
+# @wayowe/prettyhtml-hastscript
 
 Hyperscript compatible DSL for creating virtual HAST trees
 
 ## Installation
 
 ```
-npm install --save @starptech/prettyhtml-hastscript
+npm install --save @wayowe/prettyhtml-hastscript
 ```
 
 ## Caveats

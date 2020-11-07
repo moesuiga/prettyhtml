@@ -1,11 +1,11 @@
-# @starptech/expression-parser
+# @wayowe/expression-parser
 
 Framework agnostic template expression parser
 
 ## Installation
 
 ```
-npm install --save @starptech/expression-parser
+npm install --save @wayowe/expression-parser
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install --save @starptech/expression-parser
 This example shows how we parse HTML
 
 ```js
-const parse = require('@starptech/expression-parser')
+const parse = require('@wayowe/expression-parser')
 const result = parse(`{ a + /<g></g> b }`, { brackets: ['{', '}'] })
 ```
 

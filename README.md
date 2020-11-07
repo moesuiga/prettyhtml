@@ -6,7 +6,7 @@
 
 Opinionated general formatter for your Angular, Vue, Svelte or pure HTML5 templates. Try it on the [playground](https://prettyhtml.netlify.com/).
 
-> **Project status:**  Unfortunately, This project lacks maintainers. Prettier has landed HTML support in 1.15.0. I recommend it to use it if it matches your requirements. If you want to contribute to this project, feel free to create a PR/Issue.
+> **Project status:** Unfortunately, This project lacks maintainers. Prettier has landed HTML support in 1.15.0. I recommend it to use it if it matches your requirements. If you want to contribute to this project, feel free to create a PR/Issue.
 
 ## Features
 
@@ -59,24 +59,24 @@ Adding this flag before a tag will preserve from whitespace and/or attribute wra
 
 ```html
 <!--prettyhtml-preserve-whitespace-->
-<h1> foo </h1>
+<h1>foo</h1>
 ```
 
 3. Preserve only from attribute wrapping
 
 ```html
 <!--prettyhtml-preserve-attribute-wrapping-->
-<h1 foo="bar" ...> foo </h1>
+<h1 foo="bar" ...>foo</h1>
 ```
 
 ## Install
 
 ```bash
 # regular
-$ npm install @starptech/prettyhtml --global
+$ npm install @wayowe/prettyhtml --global
 
 # when using proxy like sinopia/verdaccio
-$ npm install @starptech/prettyhtml --global --registry=https://registry.npmjs.org/
+$ npm install @wayowe/prettyhtml --global --registry=https://registry.npmjs.org/
 ```
 
 ## CLI

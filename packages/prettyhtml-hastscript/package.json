@@ -1,5 +1,5 @@
 {
-  "name": "@starptech/prettyhtml-hastscript",
+  "name": "@wayowe/prettyhtml-hastscript",
   "version": "0.10.0",
   "description": "Hyperscript compatible DSL for creating virtual HAST trees",
   "keywords": [
@@ -14,12 +14,19 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StarpTech/prettyhtml.git"
+    "url": "git+https://github.com/moesuiga/prettyhtml.git"
   },
   "author": "Dustin Deus <deusdustin@gmail.com> (http://www.starptech.de)",
+  "contributors": [
+    {
+      "name": "moesuiga",
+      "email": "wyw1121@live.com",
+      "url": "https://moesuiga.github.io/"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/StarpTech/prettyhtml/issues"
+    "url": "https://github.com/moesuiga/prettyhtml/issues"
   },
   "files": [
     "index.js",

@@ -1,7 +1,7 @@
-const parse = require('@starptech/rehype-webparser')
-const stringify = require('@starptech/prettyhtml-formatter/stringify')
-const sortAttributes = require('@starptech/prettyhtml-sort-attributes')
-const format = require('@starptech/prettyhtml-formatter')
+const parse = require('@wayowe/rehype-webparser')
+const stringify = require('@wayowe/prettyhtml-formatter/stringify')
+const sortAttributes = require('@wayowe/prettyhtml-sort-attributes')
+const format = require('@wayowe/prettyhtml-formatter')
 const report = require('vfile-reporter')
 
 function processResult({ cli }) {
@@ -28,7 +28,8 @@ function configTransform({ prettierConfig, cli }) {
         ignoreFirstLf: false,
         decodeEntities: false,
         selfClosingCustomElements: true,
-        selfClosingElements: true
+        selfClosingElements: true,
+        voids: cli.flags.voids
       }
     ],
     [
@@ -53,7 +54,12 @@ function configTransform({ prettierConfig, cli }) {
       tabWidth: cli.flags.tabWidth,
       printWidth: cli.flags.printWidth,
       singleQuote: cli.flags.singleQuote,
-      wrapAttributes: cli.flags.wrapAttributes
+      wrapAttributes: cli.flags.wrapAttributes,
+      voids: cli.flags.voids,
+      closeSelfClosing: cli.flags.closeSelfClosing,
+      tightSelfClosing: cli.flags.tightSelfClosing,
+      closeEmptyElements: cli.flags.closeEmptyElements,
+      tightCommaSeparatedLists: cli.flags.tightCommaSeparatedLists
     }
   ])
 

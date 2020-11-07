@@ -1,11 +1,11 @@
 {
-  "name": "@starptech/prettyhtml-formatter",
+  "name": "@wayowe/prettyhtml-formatter",
   "version": "0.10.0",
   "description": "Html formatter",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StarpTech/prettyhtml.git"
+    "url": "git+https://github.com/moesuiga/prettyhtml.git"
   },
   "scripts": {
     "test-api": "node test/index.js",
@@ -23,17 +23,24 @@
     "html5"
   ],
   "author": "Dustin Deus <deusdustin@gmail.com> (http://www.starptech.de)",
+  "contributors": [
+    {
+      "name": "moesuiga",
+      "email": "wyw1121@live.com",
+      "url": "https://moesuiga.github.io/"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/StarpTech/prettyhtml/issues"
+    "url": "https://github.com/moesuiga/prettyhtml/issues"
   },
-  "homepage": "https://github.com/StarpTech/prettyhtml#readme",
+  "homepage": "https://github.com/moesuiga/prettyhtml#readme",
   "dependencies": {
-    "@starptech/expression-parser": "^0.10.0",
-    "@starptech/prettyhtml-hast-to-html": "^0.10.0",
-    "@starptech/rehype-minify-whitespace": "^0.10.0",
-    "@starptech/rehype-webparser": "^0.10.0",
-    "@starptech/webparser": "^0.10.0",
+    "@wayowe/expression-parser": "^0.10.0",
+    "@wayowe/prettyhtml-hast-to-html": "^0.10.0",
+    "@wayowe/rehype-minify-whitespace": "^0.10.0",
+    "@wayowe/rehype-webparser": "^0.10.0",
+    "@wayowe/webparser": "^0.10.0",
     "hast-util-is-element": "^1.0.3",
     "hast-util-to-string": "^1.0.2",
     "html-void-elements": "^1.0.4",

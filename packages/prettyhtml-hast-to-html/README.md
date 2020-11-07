@@ -1,11 +1,11 @@
-# @starptech/prettyhtml-hast-to-html
+# @wayowe/prettyhtml-hast-to-html
 
 [**Hast**](https://github.com/syntax-tree/hast) to HTML converter
 
 ## Installation
 
 ```
-npm install --save @starptech/prettyhtml-hast-to-html
+npm install --save @wayowe/prettyhtml-hast-to-html
 ```
 
 ## Api

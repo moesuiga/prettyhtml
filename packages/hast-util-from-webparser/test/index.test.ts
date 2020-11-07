@@ -1,4 +1,4 @@
-import { HtmlParser } from '@starptech/webparser'
+import { HtmlParser } from '@wayowe/webparser'
 import fromWebParser from '../index'
 
 function getParserOpt() {
