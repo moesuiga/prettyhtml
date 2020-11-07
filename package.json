@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
+    "start": "lerna bootstrap",
     "publish": "lerna publish",
     "clean": "lerna clean",
     "prettify": "prettier --write \"./**/*.js\" --write \"./**/*.ts\"",
     "test": "lerna exec --parallel -- yarn test",
     "lint": "eslint .",
     "format": "prettier --write 'packages/**/*.{js,ts,md}'",
-    "build-ts": "lerna exec --scope @starptech/webparser --scope @starptech/hast-util-from-webparser --scope @starptech/rehype-webparser -- yarn run build-ts"
+    "build-ts": "lerna exec --scope @wayowe/webparser --scope @wayowe/hast-util-from-webparser --scope @wayowe/rehype-webparser -- yarn run build-ts"
   },
   "husky": {
     "hooks": {
@@ -19,14 +20,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StarpTech/prettyhtml.git"
+    "url": "git+https://github.com/moesuiga/prettyhtml.git"
   },
   "author": "Dustin Deus <deusdustin@gmail.com> (http://www.starptech.de)",
+  "contributors": [
+    {
+      "name": "moesuiga",
+      "email": "wyw1121@live.com",
+      "url": "https://moesuiga.github.io/"
+    }
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/StarpTech/prettyhtml/issues"
+    "url": "https://github.com/moesuiga/prettyhtml/issues"
   },
-  "homepage": "https://github.com/StarpTech/prettyhtml#readme",
+  "homepage": "https://github.com/moesuiga/prettyhtml#readme",
   "devDependencies": {
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-hemera": "^1.0.0",

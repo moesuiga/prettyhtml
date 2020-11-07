@@ -39,7 +39,12 @@ export class TokenizeResult {
 export function tokenize(
   source: string,
   url: string,
-  getTagDefinition: (tagName: string, ignoreFirstLf: boolean, canSelfClose: boolean) => TagDefinition,
+  getTagDefinition: (
+    tagName: string,
+    ignoreFirstLf: boolean,
+    canSelfClose: boolean,
+    voids?: string[]
+  ) => TagDefinition,
   interpolationConfig: InterpolationConfig = DEFAULT_INTERPOLATION_CONFIG,
   options: LexerOptions = {
     decodeEntities: true,
@@ -74,6 +79,7 @@ export interface LexerOptions {
   decodeEntities?: boolean
   ignoreFirstLf?: boolean
   selfClosingElements?: boolean
+  voids?: string[]
 }
 
 // See http://www.w3.org/TR/html51/syntax.html#writing
@@ -105,7 +111,8 @@ class _Tokenizer {
     private _getTagDefinition: (
       tagName: string,
       ignoreFirstLf: boolean,
-      canSelfClose: boolean
+      canSelfClose: boolean,
+      voids?: string[]
     ) => TagDefinition,
     private _interpolationConfig: InterpolationConfig = DEFAULT_INTERPOLATION_CONFIG,
     private _options: LexerOptions
@@ -440,7 +447,8 @@ class _Tokenizer {
     const contentTokenType = this._getTagDefinition(
       tagName,
       this._options.ignoreFirstLf,
-      this._options.selfClosingElements
+      this._options.selfClosingElements,
+      this._options.voids
     ).contentType
 
     // allow raw text elements to self-close itself

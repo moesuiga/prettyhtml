@@ -16,7 +16,7 @@ prettyhtml-quick
 ## Install
 
 ```shellsession
-npm install --save-dev @starptech/prettyhtml-quick
+npm install --save-dev @wayowe/prettyhtml-quick
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ npm install --save-dev @starptech/prettyhtml-quick
 With [`npx`](https://npm.im/npx): (No install required)
 
 ```shellsession
-npx @starptech/prettyhtml-quick
+npx @wayowe/prettyhtml-quick
 ```
 
 ## Pre-Commit Hook

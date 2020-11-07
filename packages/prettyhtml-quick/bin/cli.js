@@ -3,7 +3,8 @@
 'use strict'
 
 const program = require('commander')
-const prettyhtml = require('@starptech/prettyhtml')
+const prettyhtml = require('@wayowe/prettyhtml')
+const { getPrettyhtmlRC } = require('@wayowe/prettyhtml/cli/index')
 const path = require('path')
 const fs = require('fs')
 const chalk = require('chalk')
@@ -22,17 +23,29 @@ const root = git.detect(cwd)
 const revision = git.getSinceRevision(root, { staged: program.staged })
 const changedFiles = program.staged ? git.getStagedChangedFiles(root) : git.getUnstagedChangedFiles(root)
 
+const rcConfig = getPrettyhtmlRC()
+
+let htmlReg = /.+\.(html|htm)$/
+if (typeof rcConfig.htmlFileReg === 'string') {
+  htmlReg = new RegExp(rcConfig.htmlFileReg)
+} else if (Object.prototype.toString.call(rcConfig.htmlFileReg) === '[object RegExp]') {
+  htmlReg = rcConfig.htmlFileReg
+}
+
 // only html files
-const htmlFiles = changedFiles.filter(filename => /.+\.html|.htm$/.test(filename))
+const htmlFiles = changedFiles.filter(filename => htmlReg.test(filename))
 
 // same prettyhtml defaults
-const prettyhtmlCfg = {
-  printWidth: prettierConfig.printWidth,
-  tabWidth: prettierConfig.tabWidth,
-  prettier: prettierConfig,
-  wrapAttributes: prettierConfig.wrapAttributes,
-  sortAttributes: prettierConfig.sortAttributes
-}
+const prettyhtmlCfg = Object.assign(
+  {
+    printWidth: prettierConfig.printWidth,
+    tabWidth: prettierConfig.tabWidth,
+    prettier: prettierConfig,
+    wrapAttributes: prettierConfig.wrapAttributes,
+    sortAttributes: prettierConfig.sortAttributes
+  },
+  rcConfig
+)
 
 if (htmlFiles.length) {
   console.log(`🔍  Finding changed files since ${chalk.bold('git')} revision ${chalk.bold(revision)}.`)

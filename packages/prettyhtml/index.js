@@ -2,10 +2,10 @@
 
 const VFile = require('vfile')
 const unified = require('unified')
-const parse = require('@starptech/rehype-webparser')
-const stringify = require('@starptech/prettyhtml-formatter/stringify')
-const format = require('@starptech/prettyhtml-formatter')
-const sortAttributes = require('@starptech/prettyhtml-sort-attributes')
+const parse = require('@wayowe/rehype-webparser')
+const stringify = require('@wayowe/prettyhtml-formatter/stringify')
+const format = require('@wayowe/prettyhtml-formatter')
+const sortAttributes = require('@wayowe/prettyhtml-sort-attributes')
 
 module.exports = prettyhtml
 
@@ -29,8 +29,11 @@ function core(value, processor, options) {
       tabWidth: options.tabWidth,
       useTabs: options.useTabs,
       singleQuote: options.singleQuote,
-      closeSelfClosing: true,
-      closeEmptyElements: true
+      voids: options.voids,
+      closeSelfClosing: options.closeSelfClosing === undefined ? true : options.closeSelfClosing,
+      tightSelfClosing: options.tightSelfClosing,
+      closeEmptyElements: options.closeEmptyElements === undefined ? true : options.closeEmptyElements,
+      tightCommaSeparatedLists: options.tightCommaSeparatedLists
     })
     .processSync(file)
 }
@@ -44,7 +47,8 @@ function prettyhtml(value, options) {
         ignoreFirstLf: false,
         decodeEntities: false,
         selfClosingCustomElements: true,
-        selfClosingElements: true
+        selfClosingElements: true,
+        voids: opt.voids
       })
       .freeze(),
     opt

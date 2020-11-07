@@ -1,9 +1,9 @@
-# @starptech/prettyhtml-sort-attributes
+# @wayowe/prettyhtml-sort-attributes
 
 Sort attributes alphabetically
 
 ## Installation
 
 ```
-npm install --save @starptech/prettyhtml-sort-attributes
+npm install --save @wayowe/prettyhtml-sort-attributes
 ```

@@ -1,11 +1,11 @@
 {
-  "name": "@starptech/prettyhtml-hast-to-html",
+  "name": "@wayowe/prettyhtml-hast-to-html",
   "version": "0.10.0",
   "description": "Hast to html converter",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StarpTech/prettyhtml.git"
+    "url": "git+https://github.com/moesuiga/prettyhtml.git"
   },
   "scripts": {
     "test": "ava",
@@ -22,11 +22,18 @@
     "stringify"
   ],
   "author": "Dustin Deus <deusdustin@gmail.com> (http://www.starptech.de)",
+  "contributors": [
+    {
+      "name": "moesuiga",
+      "email": "wyw1121@live.com",
+      "url": "https://moesuiga.github.io/"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/StarpTech/prettyhtml/issues"
+    "url": "https://github.com/moesuiga/prettyhtml/issues"
   },
-  "homepage": "https://github.com/StarpTech/prettyhtml#readme",
+  "homepage": "https://github.com/moesuiga/prettyhtml#readme",
   "dependencies": {
     "ccount": "^1.0.4",
     "comma-separated-tokens": "^1.0.7",
@@ -42,7 +49,7 @@
     "xtend": "^4.0.1"
   },
   "devDependencies": {
-    "@starptech/prettyhtml-hastscript": "^0.10.0",
+    "@wayowe/prettyhtml-hastscript": "^0.10.0",
     "ava": "^2.1.0",
     "nyc": "^14.1.1",
     "unist-builder": "^1.0.4"

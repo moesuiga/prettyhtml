@@ -3,20 +3,23 @@
 'use strict'
 
 const { PassThrough } = require('stream')
-const { basename } = require('path')
+const { basename, join } = require('path')
 const prettier = require('prettier')
 const engine = require('unified-engine')
 const unified = require('unified')
 const updateNotifier = require('update-notifier')
+const { cosmiconfigSync } = require('cosmiconfig')
 const { configTransform, processResult } = require('./processor')
 const args = require('./args')
 const pkg = require('./../package')
+
+const explorerSync = cosmiconfigSync('prettyhtml')
 
 function getDefaultSettings() {
   const settings = {
     extensions: ['html'],
     streamError: new PassThrough(), // sink errors
-    rcName: '.prettyhtmlrc',
+    // rcName: '.prettyhtmlrc',
     packageField: 'prettyhtml',
     ignoreName: '.prettyhtmlignore',
     frail: false
@@ -24,7 +27,22 @@ function getDefaultSettings() {
   return settings
 }
 
-module.exports = { getDefaultSettings }
+function getPrettyhtmlRC(config) {
+  try {
+    let result = null
+    if (config) {
+      result = explorerSync.load(join(process.cwd(), config))
+    } else {
+      result = explorerSync.search(process.cwd())
+    }
+    return (result && result.config) || {}
+  } catch (e) {
+    console.warn(e)
+    return {}
+  }
+}
+
+module.exports = { getDefaultSettings, getPrettyhtmlRC }
 
 // this was run directly from the command line
 if (require.main === module) {
@@ -43,6 +61,9 @@ if (require.main === module) {
 
   const prettierConfig = prettier.resolveConfig.sync(process.cwd()) || {}
   const cli = args(prettierConfig)
+
+  cli.flags = Object.assign({}, cli.flags, getPrettyhtmlRC())
+
   const settings = getDefaultSettings()
   settings.configTransform = configTransform
   settings.defaultConfig = configTransform({ prettierConfig, cli })

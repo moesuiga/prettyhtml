@@ -1,5 +1,5 @@
 {
-  "name": "@starptech/webparser",
+  "name": "@wayowe/webparser",
   "version": "0.10.0",
   "description": "Optimized html parser for HTML5 Web Components.",
   "main": "./dist/public_api.js",
@@ -22,8 +22,17 @@
     "html5"
   ],
   "author": "Dustin Deus <deusdustin@gmail.com> (http://www.starptech.de)",
+  "contributors": [
+    {
+      "name": "moesuiga",
+      "email": "wyw1121@live.com",
+      "url": "https://moesuiga.github.io/"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
+    "@types/babel__core": "^7.1.12",
+    "@types/babel__template": "^7.0.3",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
@@ -34,5 +43,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "html-void-elements": "^1.0.4"
   }
 }

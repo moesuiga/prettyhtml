@@ -1,5 +1,7 @@
 import { TagContentType, TagDefinition } from './tags'
 
+const htmlVoidElements = require('html-void-elements') as string[]
+
 export class HtmlTagDefinition implements TagDefinition {
   private closedByChildren: { [key: string]: boolean } = {}
 
@@ -76,27 +78,28 @@ let TAG_DEFINITIONS: Map<string, { [key: string]: HtmlTagDefinition }> = new Map
 export function getHtmlTagDefinition(
   tagName: string,
   ignoreFirstLf: boolean,
-  canSelfClose: boolean
+  canSelfClose: boolean,
+  voids: string[] = htmlVoidElements
 ): HtmlTagDefinition {
   const cacheKey = `${ignoreFirstLf},${canSelfClose}`
 
   // we store different views of the tag definition that's why we need a cache invalidation strategy
   if (!TAG_DEFINITIONS.has(cacheKey)) {
     TAG_DEFINITIONS.set(cacheKey, {
-      base: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      meta: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      area: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      embed: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      link: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      img: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      image: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      input: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      param: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      hr: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      br: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      source: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      track: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
-      wbr: new HtmlTagDefinition({ isVoid: true, canSelfClose }),
+      base: new HtmlTagDefinition({ isVoid: voids.includes('base'), canSelfClose }),
+      meta: new HtmlTagDefinition({ isVoid: voids.includes('meta'), canSelfClose }),
+      area: new HtmlTagDefinition({ isVoid: voids.includes('area'), canSelfClose }),
+      embed: new HtmlTagDefinition({ isVoid: voids.includes('embed'), canSelfClose }),
+      link: new HtmlTagDefinition({ isVoid: voids.includes('link'), canSelfClose }),
+      img: new HtmlTagDefinition({ isVoid: voids.includes('img'), canSelfClose }),
+      image: new HtmlTagDefinition({ isVoid: voids.includes('image'), canSelfClose }),
+      input: new HtmlTagDefinition({ isVoid: voids.includes('input'), canSelfClose }),
+      param: new HtmlTagDefinition({ isVoid: voids.includes('param'), canSelfClose }),
+      hr: new HtmlTagDefinition({ isVoid: voids.includes('hr'), canSelfClose }),
+      br: new HtmlTagDefinition({ isVoid: voids.includes('br'), canSelfClose }),
+      source: new HtmlTagDefinition({ isVoid: voids.includes('source'), canSelfClose }),
+      track: new HtmlTagDefinition({ isVoid: voids.includes('track'), canSelfClose }),
+      wbr: new HtmlTagDefinition({ isVoid: voids.includes('wbr'), canSelfClose }),
       p: new HtmlTagDefinition({
         closedByChildren: [
           'address',
@@ -161,7 +164,7 @@ export function getHtmlTagDefinition(
       }),
       col: new HtmlTagDefinition({
         requiredParents: ['colgroup'],
-        isVoid: true,
+        isVoid: voids.includes('col'),
         canSelfClose
       }),
       svg: new HtmlTagDefinition({

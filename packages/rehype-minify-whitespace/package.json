@@ -1,5 +1,5 @@
 {
-  "name": "@starptech/rehype-minify-whitespace",
+  "name": "@wayowe/rehype-minify-whitespace",
   "version": "0.10.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,13 @@
     "whitespace"
   ],
   "author": "Dustin Deus <deusdustin@gmail.com> (http://www.starptech.de)",
+  "contributors": [
+    {
+      "name": "moesuiga",
+      "email": "wyw1121@live.com",
+      "url": "https://moesuiga.github.io/"
+    }
+  ],
   "license": "ISC",
   "files": [
     "index.js",
@@ -25,7 +32,7 @@
     "unist-util-modify-children": "^1.1.4"
   },
   "devDependencies": {
-    "@starptech/prettyhtml-hastscript": "^0.10.0",
+    "@wayowe/prettyhtml-hastscript": "^0.10.0",
     "ava": "^2.1.0",
     "nyc": "^14.1.1",
     "rehype": "^8.0.0"

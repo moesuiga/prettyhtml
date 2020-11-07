@@ -2,7 +2,7 @@
 
 const test = require('ava')
 const rehype = require('rehype')
-const h = require('@starptech/prettyhtml-hastscript')
+const h = require('@wayowe/prettyhtml-hastscript')
 const min = require('.')
 
 test('rehype-sort-attributes', function(t) {

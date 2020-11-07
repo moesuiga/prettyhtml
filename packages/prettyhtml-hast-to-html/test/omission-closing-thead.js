@@ -1,7 +1,7 @@
 'use strict'
 
 var test = require('ava')
-var h = require('@starptech/prettyhtml-hastscript')
+var h = require('@wayowe/prettyhtml-hastscript')
 var to = require('..')
 
 test('`thead` (closing)', function(t) {

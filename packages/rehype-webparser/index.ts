@@ -1,10 +1,11 @@
-import { HtmlParser, ParseErrorLevel, TreeError } from '@starptech/webparser'
-import fromWebparser from '@starptech/hast-util-from-webparser'
+import { HtmlParser, ParseErrorLevel, TreeError } from '@wayowe/webparser'
+import fromWebparser from '@wayowe/hast-util-from-webparser'
 
 interface ParseOptions {
   ignoreFirstLf?: boolean
   decodeEntities?: boolean
   selfClosingCustomElements?: boolean
+  voids?: string[]
 }
 interface VFile {
   path: string

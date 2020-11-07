@@ -1,5 +1,5 @@
 {
-  "name": "@starptech/prettyhtml-sort-attributes",
+  "name": "@wayowe/prettyhtml-sort-attributes",
   "version": "0.10.0",
   "description": "Sort attributes alphabetically",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "test-coverage": "nyc --reporter lcov ava"
   },
   "devDependencies": {
-    "@starptech/prettyhtml-hastscript": "^0.10.0",
+    "@wayowe/prettyhtml-hastscript": "^0.10.0",
     "ava": "^2.1.0",
     "nyc": "^14.1.1",
     "rehype": "^8.0.0"
@@ -33,6 +33,13 @@
     "attributes"
   ],
   "author": "Dustin Deus <deusdustin@gmail.com> (http://www.starptech.de)",
+  "contributors": [
+    {
+      "name": "moesuiga",
+      "email": "wyw1121@live.com",
+      "url": "https://moesuiga.github.io/"
+    }
+  ],
   "license": "MIT",
   "publishConfig": {
     "access": "public"

@@ -17,6 +17,7 @@ function args(prettierConfig = {}) {
     --stdin           Specify the standard stream as source (for pipe mode)
     --quiet           Do not output anything for a file which has no warnings or errors
     --silent          Do not output messages without fatal set to true
+    --config          Path to a specific configuration file (JSON, YAML, or CommonJS)
 
     Examples
       $ prettyhtml *.html
@@ -67,6 +68,9 @@ function args(prettierConfig = {}) {
         silent: {
           type: 'boolean',
           default: false
+        },
+        config: {
+          type: 'string'
         }
       }
     }

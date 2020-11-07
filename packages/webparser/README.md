@@ -1,4 +1,4 @@
-# @starptech/webparser
+# @wayowe/webparser
 
 Optimized html parser for HTML5 Web Components.
 The parser supports features which are very useful if you want to implement a HTML formatter or anything else where a less strict parser is needed to keep all informations in the ast.
@@ -6,7 +6,7 @@ The parser supports features which are very useful if you want to implement a HT
 ## Installation
 
 ```
-npm install --save @starptech/webparser
+npm install --save @wayowe/webparser
 ```
 
 ## Usage

@@ -7,12 +7,12 @@ import {
   Node,
   Doctype,
   Attribute
-} from '@starptech/webparser'
+} from '@wayowe/webparser'
 
 const htmlSchema = require('property-information/html')
 const svgSchema = require('property-information/svg')
-const hastSvg = require('@starptech/prettyhtml-hastscript/svg')
-const hast = require('@starptech/prettyhtml-hastscript')
+const hastSvg = require('@wayowe/prettyhtml-hastscript/svg')
+const hast = require('@wayowe/prettyhtml-hastscript')
 
 const GAP_REGEX = /\n\s*?\n\s*?$/
 
