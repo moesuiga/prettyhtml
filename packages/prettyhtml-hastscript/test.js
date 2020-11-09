@@ -844,10 +844,10 @@ test('children', function(t) {
     {
       type: 'element',
       tagName: 'button',
-      properties: {},
-      children: [{ type: 'text', value: 'Send' }]
+      properties: { type: 'text', value: 'Send' },
+      children: []
     },
-    'should allow omitting `properties` when a button has an invalid type'
+    'should *not* allow omitting `properties` when a button has an invalid type'
   )
 
   t.deepEqual(

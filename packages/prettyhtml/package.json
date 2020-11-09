@@ -1,6 +1,6 @@
 {
   "name": "@wayowe/prettyhtml",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "description": "Opinionated Web Component HTML formatter",
   "main": "index.js",
   "repository": {
@@ -43,9 +43,9 @@
   },
   "homepage": "https://github.com/moesuiga/prettyhtml#readme",
   "dependencies": {
-    "@wayowe/prettyhtml-formatter": "^0.10.2",
-    "@wayowe/prettyhtml-sort-attributes": "^0.10.2",
-    "@wayowe/rehype-webparser": "^0.10.2",
+    "@wayowe/prettyhtml-formatter": "^0.10.3",
+    "@wayowe/prettyhtml-sort-attributes": "^0.10.3",
+    "@wayowe/rehype-webparser": "^0.10.3",
     "@wayowe/webparser": "^0.10.2",
     "cosmiconfig": "^7.0.0",
     "meow": "^5.0.0",
