@@ -1,6 +1,6 @@
 {
   "name": "@wayowe/rehype-webparser",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -31,7 +31,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@wayowe/hast-util-from-webparser": "^0.10.2",
+    "@wayowe/hast-util-from-webparser": "^0.10.3",
     "@wayowe/webparser": "^0.10.2"
   },
   "devDependencies": {
