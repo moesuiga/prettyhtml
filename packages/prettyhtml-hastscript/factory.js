@@ -90,7 +90,11 @@ function isNode(tagName, value) {
   type = type.toLowerCase()
 
   if (tagName === 'button') {
-    return type !== 'menu' && type !== 'submit' && type !== 'reset' && type !== 'button'
+    // 小程序文件中 button 组件的 type 属性是 default/primary/warn
+    // 且可以使用动态数据更改，如 type="{{ buttonType }}"
+    // 原有逻辑会返回 true，导致后续以有子组件来解析出错，实际如果有子组件的话，根本不会进入这个分支，甚至可能都不会触发 isNode 这个方法
+    return false
+    // return type !== 'menu' && type !== 'submit' && type !== 'reset' && type !== 'button'
   }
 
   return 'value' in value
